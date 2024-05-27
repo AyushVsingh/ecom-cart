@@ -26,12 +26,13 @@ class CartItem extends React.Component {
                             alt="decrease"
                             className="action-icons"
                             src="https://www.svgrepo.com/show/507785/minus-circle.svg"
-                            onClick={this.decreaseQuantity}
+                            onClick={() => this.props.onDecreaseQuantity(this.props.product)}
                         />
                         <img
                             alt="delete"
                             className="action-icons"
                             src="https://www.svgrepo.com/show/502608/delete-2.svg"
+                            onClick={() => this.props.onDeleteQuantity(this.props.product)}
                         />
                     </div>
                 </div>
