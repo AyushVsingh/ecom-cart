@@ -52,12 +52,19 @@ class Cart extends React.Component {
             products
         })
     }
-    handleDeleteQuantity = (product) => {
+    // handleDeleteQuantity = (product) => {
+    //     const { products } = this.state;
+    //     const index = products.indexOf(product);
+    //     products.splice(index, 1);
+    //     this.setState({
+    //         products
+    //     })
+    // }
+    handleDeleteQuantity = (id) => {
         const { products } = this.state;
-        const index = products.indexOf(product);
-        products.splice(index, 1);
+        const items = products.filter((item) => item.id !== id);
         this.setState({
-            products
+            products: items
         })
     }
     render() {

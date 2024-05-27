@@ -3,7 +3,8 @@ import React from 'react';
 class CartItem extends React.Component {
     render() {
         console.log('this.props', this.props);
-        const { price, title, qty } = this.props.product;
+        const { price, title, qty, img, id } = this.props.product;
+        const { product, onIncreaseQuantity, onDecreaseQuantity, onDeleteQuantity } = this.props;
         return (
             <div className="cart-item">
                 {this.props.jsx}
@@ -20,19 +21,19 @@ class CartItem extends React.Component {
                             alt="increase"
                             className="action-icons"
                             src="https://www.svgrepo.com/show/507821/plus-circle.svg"
-                            onClick={() => this.props.onIncreaseQuantity(this.props.product)}
+                            onClick={() => onIncreaseQuantity(product)}
                         />
                         <img
                             alt="decrease"
                             className="action-icons"
                             src="https://www.svgrepo.com/show/507785/minus-circle.svg"
-                            onClick={() => this.props.onDecreaseQuantity(this.props.product)}
+                            onClick={() => onDecreaseQuantity(product)}
                         />
                         <img
                             alt="delete"
                             className="action-icons"
                             src="https://www.svgrepo.com/show/502608/delete-2.svg"
-                            onClick={() => this.props.onDeleteQuantity(this.props.product)}
+                            onClick={() => onDeleteQuantity(product.id)}
                         />
                     </div>
                 </div>
